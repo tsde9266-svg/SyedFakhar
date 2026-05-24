@@ -11,37 +11,37 @@ const IMAGES = [
   {
     src: 'assets/WhatsApp Image 2026-05-24 at 21.59.04 (1).jpeg',
     category: 'portrait',
-    alt: '[PHOTOGRAPHER NAME] — Portrait photography'
+    alt: 'Syed Fakhar Abbas — Portrait photography'
   },
   {
     src: 'assets/WhatsApp Image 2026-05-24 at 21.59.04 (2).jpeg',
     category: 'portrait',
-    alt: '[PHOTOGRAPHER NAME] — Portrait photography'
+    alt: 'Syed Fakhar Abbas — Portrait photography'
   },
   {
     src: 'assets/WhatsApp Image 2026-05-24 at 21.59.04.jpeg',
     category: 'editorial',
-    alt: '[PHOTOGRAPHER NAME] — Editorial photography'
+    alt: 'Syed Fakhar Abbas — Editorial photography'
   },
   {
     src: 'assets/WhatsApp Image 2026-05-24 at 21.59.05 (1).jpeg',
     category: 'editorial',
-    alt: '[PHOTOGRAPHER NAME] — Editorial photography'
+    alt: 'Syed Fakhar Abbas — Editorial photography'
   },
   {
     src: 'assets/WhatsApp Image 2026-05-24 at 21.59.05 (2).jpeg',
     category: 'commercial',
-    alt: '[PHOTOGRAPHER NAME] — Commercial photography'
+    alt: 'Syed Fakhar Abbas — Commercial photography'
   },
   {
     src: 'assets/WhatsApp Image 2026-05-24 at 21.59.05 (3).jpeg',
     category: 'commercial',
-    alt: '[PHOTOGRAPHER NAME] — Commercial photography'
+    alt: 'Syed Fakhar Abbas — Commercial photography'
   },
   {
     src: 'assets/WhatsApp Image 2026-05-24 at 21.59.05.jpeg',
     category: 'events',
-    alt: '[PHOTOGRAPHER NAME] — Events photography'
+    alt: 'Syed Fakhar Abbas — Events photography'
   }
 ];
 
