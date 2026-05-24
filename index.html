@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- PLACEHOLDER: photographer-name → replace [PHOTOGRAPHER NAME] throughout -->
+  <title>[PHOTOGRAPHER NAME] — Photography</title>
+  <meta name="description" content="[PHOTOGRAPHER NAME] — Professional photographer specialising in portrait, editorial, commercial and events photography." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       NAV — split layout: links | logo | links
+       ============================================================ -->
+  <header class="site-header" role="banner">
+    <nav class="nav" aria-label="Primary navigation">
+      <ul class="nav__left" role="list">
+        <li><a href="#work" class="nav__link">Work</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+      </ul>
+
+      <a href="#hero" class="nav__logo" aria-label="[PHOTOGRAPHER NAME] — home">
+        <!-- PLACEHOLDER: photographer-name → replace [PHOTOGRAPHER NAME] throughout -->
+        <span class="nav__logo-name">Syed Fakhar</span>
+        <span class="nav__logo-surname">Abbas</span>
+      </a>
+
+      <ul class="nav__right" role="list">
+        <li><a href="#experience" class="nav__link">CV</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+
+      <button class="nav__hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="nav__mobile" id="mobile-menu" aria-hidden="true">
+      <ul role="list">
+        <li><a href="#work" class="nav__link">Work</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#experience" class="nav__link">CV</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         HERO — full-screen, large centered name
+         ============================================================ -->
+    <section id="hero" class="hero" aria-label="Hero">
+      <div class="hero__inner">
+        <!-- PLACEHOLDER: photographer-name → replace [PHOTOGRAPHER NAME] throughout -->
+        <p class="hero__eyebrow reveal-x">Photography</p>
+        <h1 class="hero__name reveal-x delay-1">
+          <span class="hero__name-first">Syed Fakhar</span>
+          <span class="hero__name-last">Abbas</span>
+        </h1>
+        <p class="hero__tagline reveal-x delay-2">Portrait &nbsp;·&nbsp; Editorial &nbsp;·&nbsp; Commercial &nbsp;·&nbsp; Events</p>
+        <a href="#work" class="hero__cta reveal-x delay-3" aria-label="View portfolio">View Work</a>
+      </div>
+      <div class="hero__scroll-indicator" aria-hidden="true">
+        <span></span>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT
+         ============================================================ -->
+    <section id="about" class="about section" aria-labelledby="about-heading">
+      <div class="about__inner">
+        <div class="about__text reveal-x">
+          <h2 id="about-heading" class="section-label">About</h2>
+          <!-- PLACEHOLDER: bio → replace with artist statement from content/bio.md -->
+          <p class="about__statement">
+            [PHOTOGRAPHER NAME] is a professional photographer whose work spans portraiture, editorial, commercial campaigns and live events. With a documentary sensitivity and a refined visual language, the work moves between quiet intimacy and grand spectacle — always led by light, composition, and the decisive moment.
+          </p>
+          <p class="about__body">
+            Based internationally, [PHOTOGRAPHER NAME] has worked with leading publications, brands, and cultural institutions. The portfolio presented here represents a selection of work across multiple disciplines, submitted as evidence of exceptional talent in photography.
+          </p>
+          <!-- PLACEHOLDER: bio → replace with artist statement from content/bio.md -->
+        </div>
+        <div class="about__accent reveal-x delay-1" aria-hidden="true">
+          <span class="about__line"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PORTFOLIO / GALLERY
+         ============================================================ -->
+    <section id="work" class="portfolio section" aria-labelledby="portfolio-heading">
+      <div class="portfolio__header reveal-x">
+        <h2 id="portfolio-heading" class="section-label">Work</h2>
+      </div>
+
+      <!-- Category filter bar -->
+      <div class="filter-bar" role="tablist" aria-label="Filter gallery by category">
+        <button class="filter-btn active" role="tab" aria-selected="true" data-filter="all">All</button>
+        <button class="filter-btn" role="tab" aria-selected="false" data-filter="portrait">Portrait</button>
+        <button class="filter-btn" role="tab" aria-selected="false" data-filter="editorial">Editorial</button>
+        <button class="filter-btn" role="tab" aria-selected="false" data-filter="commercial">Commercial</button>
+        <button class="filter-btn" role="tab" aria-selected="false" data-filter="events">Events</button>
+      </div>
+
+      <!-- Gallery grid — populated by JS -->
+      <!-- PLACEHOLDER: photo-captions → add captions/alt text per photo -->
+      <div class="gallery-grid" id="gallery" role="list" aria-label="Photography gallery"></div>
+    </section>
+
+    <!-- ============================================================
+         EXPERIENCE / CV — timeline layout
+         ============================================================ -->
+    <section id="experience" class="experience section" aria-labelledby="experience-heading">
+      <div class="experience__inner">
+        <h2 id="experience-heading" class="section-label reveal-x">Experience</h2>
+        <!-- PLACEHOLDER: cv → replace with experience from content/cv.md -->
+        <ol class="timeline" aria-label="Professional experience">
+          <li class="timeline__item reveal-x">
+            <span class="timeline__year">2020 — Present</span>
+            <div class="timeline__content">
+              <h3 class="timeline__title">Independent Photographer</h3>
+              <p class="timeline__desc">Freelance practice across portrait, editorial, commercial and events. Client work for international brands and publications. [Replace with real experience from content/cv.md]</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal-x delay-1">
+            <span class="timeline__year">2018 — 2020</span>
+            <div class="timeline__content">
+              <h3 class="timeline__title">Staff Photographer</h3>
+              <p class="timeline__desc">[Replace with role, employer, and key achievements from content/cv.md]</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal-x delay-2">
+            <span class="timeline__year">2015 — 2018</span>
+            <div class="timeline__content">
+              <h3 class="timeline__title">Editorial Photographer</h3>
+              <p class="timeline__desc">[Replace with role, employer, and key achievements from content/cv.md]</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal-x delay-3">
+            <span class="timeline__year">Education</span>
+            <div class="timeline__content">
+              <h3 class="timeline__title">[Degree / Qualification]</h3>
+              <p class="timeline__desc">[Replace with education details from content/cv.md]</p>
+            </div>
+          </li>
+        </ol>
+        <!-- PLACEHOLDER: cv → replace with experience from content/cv.md -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CLIENTS
+         ============================================================ -->
+    <section id="clients" class="clients section" aria-labelledby="clients-heading">
+      <div class="clients__inner">
+        <h2 id="clients-heading" class="section-label reveal-x">Clients &amp; Publications</h2>
+        <!-- PLACEHOLDER: clients → replace with client list from content/clients.md -->
+        <ul class="clients__grid" role="list" aria-label="Client list">
+          <li class="clients__item reveal-x"><span>[Client Name]</span></li>
+          <li class="clients__item reveal-x delay-1"><span>[Publication]</span></li>
+          <li class="clients__item reveal-x delay-2"><span>[Brand]</span></li>
+          <li class="clients__item reveal-x delay-3"><span>[Agency]</span></li>
+          <li class="clients__item reveal-x"><span>[Client Name]</span></li>
+          <li class="clients__item reveal-x delay-1"><span>[Publication]</span></li>
+          <li class="clients__item reveal-x delay-2"><span>[Brand]</span></li>
+          <li class="clients__item reveal-x delay-3"><span>[Agency]</span></li>
+        </ul>
+        <!-- PLACEHOLDER: clients → replace with client list from content/clients.md -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT
+         ============================================================ -->
+    <section id="contact" class="contact section" aria-labelledby="contact-heading">
+      <div class="contact__inner">
+        <h2 id="contact-heading" class="section-label reveal-x">Contact</h2>
+        <!-- PLACEHOLDER: contact → replace with real email, phone, social links -->
+        <div class="contact__body reveal-x delay-1">
+          <p class="contact__intro">Available for portrait, editorial, commercial and events commissions worldwide.</p>
+          <div class="contact__links">
+            <a href="mailto:hello@example.com" class="contact__link" aria-label="Send email">
+              <span class="contact__link-label">Email</span>
+              <span class="contact__link-value">hello@example.com</span>
+            </a>
+            <a href="tel:+440000000000" class="contact__link" aria-label="Call phone number">
+              <span class="contact__link-label">Phone</span>
+              <span class="contact__link-value">+44 000 000 0000</span>
+            </a>
+            <a href="#" class="contact__link" aria-label="View Instagram profile" rel="noopener noreferrer" target="_blank">
+              <span class="contact__link-label">Instagram</span>
+              <span class="contact__link-value">@handle</span>
+            </a>
+            <a href="#" class="contact__link" aria-label="View LinkedIn profile" rel="noopener noreferrer" target="_blank">
+              <span class="contact__link-label">LinkedIn</span>
+              <span class="contact__link-value">/in/handle</span>
+            </a>
+          </div>
+        </div>
+        <!-- PLACEHOLDER: contact → replace with real email, phone, social links -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer__inner">
+      <!-- PLACEHOLDER: photographer-name → replace [PHOTOGRAPHER NAME] throughout -->
+      <p class="footer__name">Syed Fakhar Abbas</p>
+      <p class="footer__copy">&copy; <span id="footer-year"></span> [PHOTOGRAPHER NAME]. All rights reserved.</p>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#experience">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       LIGHTBOX
+       ============================================================ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
+    <button class="lightbox__close" id="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <button class="lightbox__prev" id="lightbox-prev" aria-label="Previous image">&#8592;</button>
+    <button class="lightbox__next" id="lightbox-next" aria-label="Next image">&#8594;</button>
+    <div class="lightbox__stage">
+      <img class="lightbox__img" id="lightbox-img" src="" alt="" />
+      <p class="lightbox__caption" id="lightbox-caption"></p>
+    </div>
+    <div class="lightbox__counter" id="lightbox-counter" aria-live="polite"></div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
