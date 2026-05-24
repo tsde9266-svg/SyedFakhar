@@ -54,7 +54,9 @@ function buildGallery() {
 
   IMAGES.forEach((img, index) => {
     const item = document.createElement('figure');
-    item.className = 'gallery-item reveal-x';
+    // Items 0 and 5 are "wide" featured tiles (span 2 cols) in the all-view grid
+    const isWide = index === 0 || index === 5;
+    item.className = 'gallery-item reveal-x' + (isWide ? ' gallery-item--wide' : '');
     item.setAttribute('role', 'listitem');
     item.setAttribute('data-category', img.category);
     item.setAttribute('data-index', index);
