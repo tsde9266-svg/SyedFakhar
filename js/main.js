@@ -42,6 +42,26 @@ const IMAGES = [
     src: 'assets/WhatsApp Image 2026-05-24 at 21.59.05.jpeg',
     category: 'events',
     alt: 'Syed Fakhar Abbas — Events photography'
+  },
+  {
+    src: 'assets/ALI_1368.JPG.jpeg',
+    category: 'portrait',
+    alt: 'Syed Fakhar Abbas — Portrait photography'
+  },
+  {
+    src: 'assets/ALI_1411.JPG.jpeg',
+    category: 'portrait',
+    alt: 'Syed Fakhar Abbas — Portrait photography'
+  },
+  {
+    src: 'assets/ALI_1508.JPG.jpeg',
+    category: 'editorial',
+    alt: 'Syed Fakhar Abbas — Editorial photography'
+  },
+  {
+    src: 'assets/ALI_2762.JPG.jpeg',
+    category: 'commercial',
+    alt: 'Syed Fakhar Abbas — Commercial photography'
   }
 ];
 
