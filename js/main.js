@@ -62,6 +62,61 @@ const IMAGES = [
     src: 'assets/ALI_2762.JPG.jpeg',
     category: 'commercial',
     alt: 'Syed Fakhar Abbas — Commercial photography'
+  },
+  {
+    src: 'assets/IMG_3827.JPG.jpeg',
+    category: 'portrait',
+    alt: 'Syed Fakhar Abbas — Portrait photography'
+  },
+  {
+    src: 'assets/IMG_3828.JPG.jpeg',
+    category: 'editorial',
+    alt: 'Syed Fakhar Abbas — Editorial photography'
+  },
+  {
+    src: 'assets/IMG_3833.JPG.jpeg',
+    category: 'events',
+    alt: 'Syed Fakhar Abbas — Events photography'
+  },
+  {
+    src: 'assets/IMG_3837.JPG.jpeg',
+    category: 'portrait',
+    alt: 'Syed Fakhar Abbas — Portrait photography'
+  },
+  {
+    src: 'assets/IMG_3839.JPG.jpeg',
+    category: 'commercial',
+    alt: 'Syed Fakhar Abbas — Commercial photography'
+  },
+  {
+    src: 'assets/IMG_3840.JPG.jpeg',
+    category: 'editorial',
+    alt: 'Syed Fakhar Abbas — Editorial photography'
+  },
+  {
+    src: 'assets/IMG_3844.PNG',
+    category: 'portrait',
+    alt: 'Syed Fakhar Abbas — Portrait photography'
+  },
+  {
+    src: 'assets/IMG_3845.PNG',
+    category: 'events',
+    alt: 'Syed Fakhar Abbas — Events photography'
+  },
+  {
+    src: 'assets/IMG_3846.PNG',
+    category: 'commercial',
+    alt: 'Syed Fakhar Abbas — Commercial photography'
+  },
+  {
+    src: 'assets/IMG_3847.PNG',
+    category: 'editorial',
+    alt: 'Syed Fakhar Abbas — Editorial photography'
+  },
+  {
+    src: 'assets/IMG_3848.PNG',
+    category: 'events',
+    alt: 'Syed Fakhar Abbas — Events photography'
   }
 ];
 
@@ -74,8 +129,7 @@ function buildGallery() {
 
   IMAGES.forEach((img, index) => {
     const item = document.createElement('figure');
-    // Items 0 and 5 are "wide" featured tiles (span 2 cols) in the all-view grid
-    const isWide = index === 0 || index === 5;
+    const isWide = index === 0 || index === 6 || index === 13 || index === 19;
     item.className = 'gallery-item reveal-x' + (isWide ? ' gallery-item--wide' : '');
     item.setAttribute('role', 'listitem');
     item.setAttribute('data-category', img.category);
