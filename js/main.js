@@ -117,6 +117,46 @@ const IMAGES = [
     src: 'assets/IMG_3848.PNG',
     category: 'events',
     alt: 'Syed Fakhar Abbas — Events photography'
+  },
+  {
+    src: 'assets/IMG_2959.JPG.jpeg',
+    category: 'editorial',
+    alt: 'Syed Fakhar Abbas — Editorial photography, Doha skyline'
+  },
+  {
+    src: 'assets/IMG_2962.JPG.jpeg',
+    category: 'editorial',
+    alt: 'Syed Fakhar Abbas — Editorial photography, Doha corniche'
+  },
+  {
+    type: 'video',
+    src: 'assets/reel-01.mp4',
+    category: 'video',
+    alt: 'Syed Fakhar Abbas — Videography reel'
+  },
+  {
+    type: 'video',
+    src: 'assets/reel-02.mp4',
+    category: 'video',
+    alt: 'Syed Fakhar Abbas — Videography reel'
+  },
+  {
+    type: 'video',
+    src: 'assets/reel-03.mp4',
+    category: 'video',
+    alt: 'Syed Fakhar Abbas — Videography reel'
+  },
+  {
+    type: 'video',
+    src: 'assets/reel-04.mp4',
+    category: 'video',
+    alt: 'Syed Fakhar Abbas — Videography reel'
+  },
+  {
+    type: 'video',
+    src: 'assets/reel-05.mp4',
+    category: 'video',
+    alt: 'Syed Fakhar Abbas — Videography reel'
   }
 ];
 
@@ -128,20 +168,41 @@ function buildGallery() {
   if (!grid) return;
 
   IMAGES.forEach((img, index) => {
+    const isVideo = img.type === 'video';
     const item = document.createElement('figure');
     const isWide = index === 0 || index === 6 || index === 13 || index === 19;
-    item.className = 'gallery-item reveal-x' + (isWide ? ' gallery-item--wide' : '');
+    item.className = 'gallery-item reveal-x' + (isWide ? ' gallery-item--wide' : '') + (isVideo ? ' gallery-item--video' : '');
     item.setAttribute('role', 'listitem');
     item.setAttribute('data-category', img.category);
     item.setAttribute('data-index', index);
     item.style.transitionDelay = `${(index % 3) * 0.08}s`;
 
-    const image = document.createElement('img');
-    // encodeURI handles spaces/special chars in filenames
-    image.src = encodeURI(img.src);
-    image.alt = img.alt;
-    image.loading = 'lazy';
-    image.decoding = 'async';
+    let media;
+    if (isVideo) {
+      media = document.createElement('video');
+      media.src = encodeURI(img.src);
+      media.muted = true;
+      media.loop = true;
+      media.playsInline = true;
+      media.preload = 'metadata';
+      media.setAttribute('aria-label', img.alt);
+
+      const playIcon = document.createElement('span');
+      playIcon.className = 'gallery-item__play';
+      playIcon.setAttribute('aria-hidden', 'true');
+      item.appendChild(playIcon);
+
+      // Muted preview on hover (desktop)
+      item.addEventListener('mouseenter', () => { media.play().catch(() => {}); });
+      item.addEventListener('mouseleave', () => { media.pause(); media.currentTime = 0; });
+    } else {
+      media = document.createElement('img');
+      // encodeURI handles spaces/special chars in filenames
+      media.src = encodeURI(img.src);
+      media.alt = img.alt;
+      media.loading = 'lazy';
+      media.decoding = 'async';
+    }
 
     const overlay = document.createElement('div');
     overlay.className = 'gallery-item__overlay';
@@ -152,7 +213,7 @@ function buildGallery() {
     caption.textContent = img.category.charAt(0).toUpperCase() + img.category.slice(1);
 
     overlay.appendChild(caption);
-    item.appendChild(image);
+    item.appendChild(media);
     item.appendChild(overlay);
 
     item.addEventListener('click', () => openLightbox(index));
@@ -242,25 +303,42 @@ function openLightbox(globalIndex) {
 
 function closeLightbox() {
   const lb = document.getElementById('lightbox');
+  const videoEl = document.getElementById('lightbox-video');
   lb.classList.remove('open');
   lb.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
+  videoEl.pause();
+  videoEl.removeAttribute('src');
+  videoEl.load();
 }
 
 function updateLightboxImage(direction = 0) {
   const imgEl = document.getElementById('lightbox-img');
+  const videoEl = document.getElementById('lightbox-video');
   const capEl = document.getElementById('lightbox-caption');
   const ctrEl = document.getElementById('lightbox-counter');
 
   const data = visibleImages[currentIndex];
   if (!data) return;
 
+  videoEl.pause();
+
   // Crossfade transition
   imgEl.classList.add('crossfade');
 
   setTimeout(() => {
-    imgEl.src = encodeURI(data.src);
-    imgEl.alt = data.alt;
+    if (data.type === 'video') {
+      imgEl.classList.add('hidden');
+      videoEl.classList.remove('hidden');
+      videoEl.src = encodeURI(data.src);
+      videoEl.load();
+    } else {
+      videoEl.removeAttribute('src');
+      videoEl.classList.add('hidden');
+      imgEl.classList.remove('hidden');
+      imgEl.src = encodeURI(data.src);
+      imgEl.alt = data.alt;
+    }
     capEl.textContent = data.alt;
     ctrEl.textContent = `${currentIndex + 1} / ${visibleImages.length}`;
     imgEl.classList.remove('crossfade');
